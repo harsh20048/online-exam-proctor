@@ -1,92 +1,107 @@
 # Online Exam Proctor
 
-An intelligent online examination proctoring system that uses computer vision and AI to monitor exam sessions in real-time.
+A comprehensive online examination system with AI-powered proctoring capabilities.
 
 ## Features
 
-- Real-time face detection and tracking
-- Multiple face detection to prevent impersonation
-- Head movement detection
-- Prohibited object detection (phones, books, etc.)
-- Violation recording and reporting
-- Web-based interface for easy access
-- Database integration for storing exam results and violations
+- **AI-Powered Proctoring**
+  - Face detection and recognition
+  - Head movement tracking
+  - Multiple person detection
+  - Real-time monitoring
 
-## Requirements
+- **Exam Management**
+  - Create and manage exams
+  - Set time limits
+  - Randomize questions
+  - Automatic grading
 
-- Python 3.7+
-- OpenCV
-- NumPy
-- Flask
-- MySQL
-- MediaPipe
-- Other dependencies listed in requirements.txt
+- **User Management**
+  - Student registration
+  - Admin dashboard
+  - Role-based access control
 
 ## Installation
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/online-exam-proctor.git
+git clone https://github.com/harsh20048/online-exam-proctor.git
 cd online-exam-proctor
 ```
 
-2. Install dependencies:
+2. Create a virtual environment:
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+3. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Set up the database:
+4. Set up the database:
 ```bash
-# For Windows
-setup_db.ps1
+# On Windows
+.\setup_db.ps1
 
-# For Linux/Mac
+# On Linux/Mac
 ./setup_db.sh
 ```
 
-4. Download required models:
+5. Run the application:
 ```bash
-python download_models.py
-```
-
-## Usage
-
-1. Start the application:
-```bash
-# For Windows
-run_app.bat
-
-# For Linux/Mac
 python app.py
 ```
 
-2. Access the web interface at `http://localhost:5000`
+## Configuration
 
-3. Login with your credentials:
+1. Create a `.env` file in the root directory:
+```env
+FLASK_APP=app.py
+FLASK_ENV=development
+SECRET_KEY=your_secret_key
+DATABASE_URL=mysql://username:password@localhost/examproctordb
+```
+
+2. Update the database configuration in `config.py` if needed.
+
+## Usage
+
+1. Access the application at `http://localhost:5000`
+2. Login credentials:
    - Admin: admin@example.com / admin123
    - Student: student1@example.com / student123
 
 ## Project Structure
 
-- `app.py` - Main Flask application
-- `camera_alldetectors.py` - Face and object detection implementation
-- `utils.py` - Utility functions
-- `models/` - AI model files
-- `static/` - Static web assets
-- `setup_db.ps1` - Database setup script
-- `requirements.txt` - Python dependencies
+```
+online-exam-proctor/
+├── app.py              # Main application file
+├── camera_alldetectors.py  # Face detection and tracking
+├── config.py           # Configuration settings
+├── models/             # ML models
+├── static/             # Static files (CSS, JS, images)
+├── templates/          # HTML templates
+├── utils.py            # Utility functions
+└── requirements.txt    # Python dependencies
+```
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/your-feature`
+3. Commit your changes: `git commit -m 'Add some feature'`
+4. Push to the branch: `git push origin feature/your-feature`
+5. Submit a pull request
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
 - OpenCV for computer vision capabilities
-- MediaPipe for face mesh detection
-- YOLO for object detection
-- Flask for web framework 
+- MediaPipe for face detection
+- Flask for web framework
+- MySQL for database management 

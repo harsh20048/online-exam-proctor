@@ -4,7 +4,6 @@ __pycache__/
 *$py.class
 *.so
 .Python
-env/
 build/
 develop-eggs/
 dist/
@@ -16,12 +15,14 @@ lib64/
 parts/
 sdist/
 var/
+wheels/
 *.egg-info/
 .installed.cfg
 *.egg
 
 # Virtual Environment
 venv/
+env/
 ENV/
 
 # IDE
@@ -30,29 +31,27 @@ ENV/
 *.swp
 *.swo
 
+# Jupyter Notebook
+.ipynb_checkpoints
+
 # Logs
 *.log
 logs/
 
+# Local development
+.env
+.env.local
+.env.*.local
+
+# Model files (consider using Git LFS for these)
+*.h5
+*.pkl
+*.model
+*.weights
+
 # Database
 *.db
 *.sqlite3
-
-# Model files (too large for git)
-*.weights
-*.caffemodel
-*.pb
-*.pbtxt
-
-# Temporary files
-*.tmp
-*.bak
-*.swp
-*~
-
-# Environment variables
-.env
-.env.local
 
 # System files
 .DS_Store
