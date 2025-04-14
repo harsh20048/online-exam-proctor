@@ -104,4 +104,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - OpenCV for computer vision capabilities
 - MediaPipe for face detection
 - Flask for web framework
-- MySQL for database management 
+- MySQL for database management "# online-exam-proctor" 
